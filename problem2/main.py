@@ -1,5 +1,17 @@
-def maximum_buy_product(money, product_price):
-    return 0
+def maximum_buy_product(money, product_price) :
+    product_price.sort()
+    max_items = 0
+    purchased_products = []
+    for price in product_price :
+        if money >= price :
+            max_items += 1
+            purchased_products.append(price)
+            money -= price
+        else :
+            break
+
+    return max_items
+
 
 if __name__ == "__main__":
     print(maximum_buy_product(50000, [25000, 25000, 10000, 14000]))      # 3

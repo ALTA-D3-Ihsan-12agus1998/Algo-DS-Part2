@@ -1,6 +1,17 @@
-def count_item_and_sort(items):
+def count_item_and_sort(items) :
+    item_count = {}
+    for item in items :
+        if item in item_count :
+            item_count[item] += 1
+        else :
+            item_count[item] = 1
+
     result = ""
-    return result
+    for item, count in sorted(item_count.items()) :
+        result += f"{item} -> {count}, "
+  
+    return result[:-2]
+
 
 if __name__ == "__main__":
     print(count_item_and_sort(["js", "js", "golang", "ruby", "ruby", "js", "js"]))

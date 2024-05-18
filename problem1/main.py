@@ -1,5 +1,20 @@
-def find_min_and_max(arr):
-    return ''
+def find_min_and_max(arr) :
+  n = len(arr)
+  if n == 0 :
+    return None
+
+  min_index = 0
+  max_index = 0
+
+  for i in range(1, n) :
+    if arr[i] < arr[min_index] :
+      min_index = i
+    if arr[i] > arr[max_index] :
+      max_index = i
+
+  result = f"min: {arr[min_index]} index: {min_index} max: {arr[max_index]} index: {max_index}"
+  return result
+
 
 if __name__ == "__main__":
     print(find_min_and_max([5, 7, 4, -2, -1, 8]))
