@@ -1,12 +1,10 @@
 def playing_domino(cards, deck) :
-    for card in cards :
-        if card[0] == deck[0] or card[1] == deck[0] :
-            if card[1] == deck[0] :
-                return card
-            else :
-                return [card[0], card[1]]
+    valid_dominoes = []
+    for domino in cards :
+        if domino[0] in deck or domino[1] in deck :
+            valid_dominoes.append(domino)
 
-    return []
+    return max(valid_dominoes, default=[])
 
 
 if __name__ == "__main__":
